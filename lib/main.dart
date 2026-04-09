@@ -15,19 +15,12 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       
       theme: ThemeData(
-        
         textTheme: GoogleFonts.poppinsTextTheme(),
-
         scaffoldBackgroundColor: CustomColor.background,
-        
-        appBarTheme: AppBarTheme(backgroundColor: CustomColor.redMalta),
-
       ),
-
       routes: {
         'homepage': (context) => HomePage()
         },
-
       initialRoute: 'homepage',
     );
   }

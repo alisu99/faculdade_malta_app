@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: CustomColor.branco,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 15,
+                fontSize: 16,
                 color: CustomColor.cinza,
               ),
             ),
@@ -79,9 +79,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // container que botei pra simular uma appbar
                 Container(
-                  padding: .all(10),
+                  padding: .all(15),
                   decoration: BoxDecoration(
-                    color: CustomColor.redMalta,
+                    gradient: LinearGradient(colors: [CustomColor.redMalta, CustomColor.redMalta2], begin: AlignmentGeometry.topStart, end: AlignmentGeometry.bottomStart),
                     borderRadius: .only(
                       bottomLeft: .circular(10),
                       bottomRight: .circular(10),
@@ -97,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: .start,
                             children: [
                               SizedBox(height: 30),
+
                               Text(
                                 'Olá, Alisson!',
                                 style: TextStyle(
@@ -105,6 +106,7 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: .bold,
                                 ),
                               ),
+
                               Text(
                                 'Pedagogia (EAD)',
                                 style: TextStyle(
@@ -119,14 +121,14 @@ class _HomePageState extends State<HomePage> {
                             backgroundColor: CustomColor.branco,
                             child: Text(
                               'AS',
-                              style: TextStyle(fontWeight: .w600),
+                              style: TextStyle(fontWeight: .w600, fontSize: 20),
                             ),
                           ),
                         ],
                       ),
 
                       SizedBox(
-                        height: 75,
+                        height: 70,
                         child: PageView(
                           controller: controller,
                           allowImplicitScrolling: true,
@@ -137,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(8),
+                                  borderRadius: .circular(5),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -160,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                                               'Calendário 2026.2',
                                               style: TextStyle(
                                                 fontWeight: .bold,
-                                                fontSize: 17,
+                                                fontSize: 16,
                                                 color: CustomColor.cinza,
                                               ),
                                             ),
@@ -188,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(8),
+                                  borderRadius: .circular(5),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -208,15 +210,15 @@ class _HomePageState extends State<HomePage> {
                                           crossAxisAlignment: .start,
                                           children: [
                                             Text(
-                                              'Calendário 2026.2',
+                                              'ENEM 2025',
                                               style: TextStyle(
                                                 fontWeight: .bold,
-                                                fontSize: 17,
+                                                fontSize: 16,
                                                 color: CustomColor.cinza,
                                               ),
                                             ),
                                             Text(
-                                              'Confira já o novo calendário acadêmico do período 2026.2',
+                                              'Faça sua inscrição usando a nota do ENEM 2025!',
                                               style: TextStyle(
                                                 overflow: TextOverflow.ellipsis,
                                                 fontSize: 14,
@@ -239,7 +241,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(8),
+                                  borderRadius: .circular(5),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -259,15 +261,15 @@ class _HomePageState extends State<HomePage> {
                                           crossAxisAlignment: .start,
                                           children: [
                                             Text(
-                                              'Calendário 2026.2',
+                                              'IRPF 2026',
                                               style: TextStyle(
                                                 fontWeight: .bold,
-                                                fontSize: 17,
+                                                fontSize: 16,
                                                 color: CustomColor.cinza,
                                               ),
                                             ),
                                             Text(
-                                              'Confira já o novo calendário acadêmico do período 2026.2',
+                                              'Declaração de imposto de renda de pessoas físicas para o ano de 2026',
                                               style: TextStyle(
                                                 overflow: TextOverflow.ellipsis,
                                                 fontSize: 14,
@@ -301,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Disciplinas do período',
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 16,
                           color: CustomColor.cinza,
                           fontWeight: .w600,
                         ),
@@ -319,7 +321,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(8),
+                                  borderRadius: .circular(5),
                                 ),
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
@@ -334,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                                           style: TextStyle(
                                             overflow: .ellipsis,
                                             fontWeight: .bold,
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             color: CustomColor.cinza,
                                           ),
                                         ),
@@ -360,7 +362,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(8),
+                                  borderRadius: .circular(5),
                                 ),
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
@@ -375,7 +377,7 @@ class _HomePageState extends State<HomePage> {
                                           style: TextStyle(
                                             overflow: .ellipsis,
                                             fontWeight: .bold,
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             color: CustomColor.cinza,
                                           ),
                                         ),
@@ -400,6 +402,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
+                SizedBox(height: 15,),
+
                 Padding(
                   padding: .symmetric(horizontal: 15),
                   child: GridView.count(
@@ -419,9 +423,10 @@ class _HomePageState extends State<HomePage> {
                       return expandir();
                     },
                     child: Container(
+                      padding: .all(5),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
-                        borderRadius: .all(.circular(6)),
+                        borderRadius: .all(.circular(5)),
                         border: Border.all(
                           color: CustomColor.redMalta,
                           width: 1.5,
@@ -442,6 +447,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               color: CustomColor.redMalta,
                               fontWeight: .bold,
+                              fontSize: 16,
                             ),
                           ),
                         ],
@@ -453,11 +459,12 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: .symmetric(horizontal: 10),
                   child: SizedBox(
-                    height: 350,
+                    height: 380,
                     child: PageView(
                       controller: bannerController,
                       scrollDirection: .horizontal,
                       children: [
+                        
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -467,7 +474,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-
+                    
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -477,7 +484,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-
+                    
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -487,6 +494,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
+                        
                       ],
                     ),
                   ),
@@ -495,9 +503,9 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: .symmetric(horizontal: 15),
                   child: Container(
-                    padding: .all(10),
+                    padding: .all(20),
                     decoration: BoxDecoration(
-                      borderRadius: .all(.circular(8)),
+                      borderRadius: .all(.circular(5)),
                       color: CustomColor.branco,
                       border: Border.all(color: CustomColor.redMalta, width: 2),
                     ),
@@ -509,7 +517,7 @@ class _HomePageState extends State<HomePage> {
                           'Avalie o nosso App!',
                           style: TextStyle(
                             color: CustomColor.redMalta,
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: .bold,
                           ),
                         ),
@@ -517,7 +525,7 @@ class _HomePageState extends State<HomePage> {
                           'Ajude-nos a melhorar a sua experiência com nossos serviços digitais!',
                           style: TextStyle(
                             color: CustomColor.redMalta,
-                            fontSize: 15,
+                            fontSize: 16,
                             fontWeight: .bold,
                           ),
                         ),
@@ -537,6 +545,7 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                     color: CustomColor.branco,
                                     fontWeight: .bold,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ],

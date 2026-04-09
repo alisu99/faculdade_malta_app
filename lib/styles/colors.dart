@@ -5,4 +5,5 @@ class CustomColor {
   static Color branco = Color(0xFFFFFFFF);
   static Color branco50 = Color.fromARGB(178, 255, 255, 255);
   static Color background = Color(0xFFE6E6E6);
+  static Color cinza = Color.fromARGB(239, 49, 49, 49);
 }

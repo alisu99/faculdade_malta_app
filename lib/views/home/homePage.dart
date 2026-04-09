@@ -20,8 +20,52 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  Widget itemWidget(String title, IconData icon) {
+    return GestureDetector(
+      child: Container(
+        padding: EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: CustomColor.branco,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: CustomColor.cinza,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [Icon(icon, color: CustomColor.redMalta, size: 35)],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final List<Widget> items = [
+      itemWidget('Calendário acadêmico', Icons.calendar_month_outlined),
+      itemWidget('Grade curricular', Icons.grid_view),
+      itemWidget('Secretaria', Icons.menu_book_rounded),
+      itemWidget('Financeiro', Icons.monetization_on),
+      itemWidget('Relatórios', Icons.edit_document),
+      itemWidget('Ouvidoria', Icons.headset_mic_outlined),
+      itemWidget('Central do aluno', Icons.school),
+      itemWidget('Carreiras', Icons.work_outline_rounded),
+      itemWidget('Malta UP', Icons.link),
+    ];
+
     return Scaffold(
       body: SafeArea(
         child: RefreshIndicator(
@@ -247,7 +291,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 // fim da "appbar da página inicial"
 
-
                 // card de disciplinas do período
                 Padding(
                   padding: .symmetric(horizontal: 10),
@@ -357,346 +400,17 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-
                 Padding(
-                  padding: .symmetric(horizontal: 10),
-                  child: SizedBox(
-                    height: iSexpanded ? 375 : 120,
-                    child: GridView.count(
-                      primary: false,
-                      padding: .all(5),
-                      crossAxisSpacing: 14,
-                      mainAxisSpacing: 14,
-                      crossAxisCount: 3,
-                      children: [
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Calendário acadêmico',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.calendar_month_outlined,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Grade curricular',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.grid_view,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Secretaria',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.menu_book_rounded,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Financeiro',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.monetization_on,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Relatórios',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.edit_document,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Ouvidoria',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.headset_mic_outlined,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Central do aluno',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.school,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Carreiras',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.work_outline_rounded,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          child: Container(
-                            padding: .all(8),
-                            decoration: BoxDecoration(
-                              color: CustomColor.branco,
-                              borderRadius: .all(.circular(8)),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: .spaceBetween,
-                              crossAxisAlignment: .start,
-                              children: [
-                                Text(
-                                  'Malta UP',
-                                  maxLines: 2,
-                                  overflow: .ellipsis,
-                                  style: TextStyle(
-                                    fontWeight: .bold,
-                                    fontSize: 15,
-                                    color: CustomColor.cinza,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: .end,
-                                  children: [
-                                    Icon(
-                                      Icons.link,
-                                      color: CustomColor.redMalta,
-                                      size: 35,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                  padding: .symmetric(horizontal: 15),
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 14,
+                    mainAxisSpacing: 14,
+                    children: iSexpanded ? items : items.take(3).toList(),
                   ),
                 ),
-
 
                 Padding(
                   padding: .symmetric(horizontal: 15),
@@ -744,7 +458,6 @@ class _HomePageState extends State<HomePage> {
                       controller: bannerController,
                       scrollDirection: .horizontal,
                       children: [
-                        
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -792,8 +505,22 @@ class _HomePageState extends State<HomePage> {
                       spacing: 10,
                       crossAxisAlignment: .start,
                       children: [
-                        Text('Avalie o nosso App!', style: TextStyle(color: CustomColor.redMalta, fontSize: 18, fontWeight: .bold),),
-                        Text('Ajude-nos a melhorar a sua experiência com nossos serviços digitais!', style: TextStyle(color: CustomColor.redMalta, fontSize: 15, fontWeight: .bold),),
+                        Text(
+                          'Avalie o nosso App!',
+                          style: TextStyle(
+                            color: CustomColor.redMalta,
+                            fontSize: 18,
+                            fontWeight: .bold,
+                          ),
+                        ),
+                        Text(
+                          'Ajude-nos a melhorar a sua experiência com nossos serviços digitais!',
+                          style: TextStyle(
+                            color: CustomColor.redMalta,
+                            fontSize: 15,
+                            fontWeight: .bold,
+                          ),
+                        ),
 
                         GestureDetector(
                           child: Container(
@@ -821,7 +548,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                SizedBox(height: 40,)
+                SizedBox(height: 20),
               ],
             ),
           ),

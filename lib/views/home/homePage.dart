@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: CustomColor.branco,
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(7),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,6 +67,9 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
+      // botei uma appbar aqui com o tamanho zerado, só pra colorir a parte de cima (barra de notificação)
+      appBar: AppBar(toolbarHeight: 0, backgroundColor: CustomColor.redMalta,),
+
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: () {
@@ -108,10 +111,10 @@ class _HomePageState extends State<HomePage> {
                               ),
 
                               Text(
-                                'Pedagogia (EAD)',
+                                'Pedagogia EAD',
                                 style: TextStyle(
                                   color: CustomColor.branco50,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: .bold,
                                 ),
                               ),
@@ -139,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(5),
+                                  borderRadius: .circular(7),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -190,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(5),
+                                  borderRadius: .circular(7),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -241,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(5),
+                                  borderRadius: .circular(7),
                                 ),
                                 child: Padding(
                                   padding: .all(10),
@@ -303,7 +306,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Disciplinas do período',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           color: CustomColor.cinza,
                           fontWeight: .w600,
                         ),
@@ -321,7 +324,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(5),
+                                  borderRadius: .circular(7),
                                 ),
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
@@ -362,7 +365,7 @@ class _HomePageState extends State<HomePage> {
                                 margin: .symmetric(horizontal: 3),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
-                                  borderRadius: .circular(5),
+                                  borderRadius: .circular(7),
                                 ),
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
@@ -402,16 +405,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-                SizedBox(height: 15,),
-
                 Padding(
                   padding: .symmetric(horizontal: 15),
                   child: GridView.count(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     crossAxisCount: 3,
-                    crossAxisSpacing: 14,
-                    mainAxisSpacing: 14,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                     children: iSexpanded ? items : items.take(3).toList(),
                   ),
                 ),
@@ -426,7 +427,7 @@ class _HomePageState extends State<HomePage> {
                       padding: .all(5),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
-                        borderRadius: .all(.circular(5)),
+                        borderRadius: .all(.circular(7)),
                         border: Border.all(
                           color: CustomColor.redMalta,
                           width: 1.5,
@@ -447,7 +448,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               color: CustomColor.redMalta,
                               fontWeight: .bold,
-                              fontSize: 16,
+                              fontSize: 14,
                             ),
                           ),
                         ],
@@ -505,7 +506,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     padding: .all(20),
                     decoration: BoxDecoration(
-                      borderRadius: .all(.circular(5)),
+                      borderRadius: .all(.circular(7)),
                       color: CustomColor.branco,
                       border: Border.all(color: CustomColor.redMalta, width: 2),
                     ),

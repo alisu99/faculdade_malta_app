@@ -13,14 +13,18 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       theme: ThemeData(
         textTheme: GoogleFonts.googleSansTextTheme(),
         scaffoldBackgroundColor: CustomColor.background,
+        appBarTheme: AppBarTheme(
+          backgroundColor: CustomColor.redMalta,
+          iconTheme: IconThemeData(color: CustomColor.branco),
+          titleTextStyle: TextStyle(fontSize: 16, fontWeight: .bold),
+          centerTitle: true,
+          
+        ),
       ),
-      routes: {
-        'homepage': (context) => HomePage()
-        },
+      routes: {'homepage': (context) => HomePage()},
       initialRoute: 'homepage',
     );
   }

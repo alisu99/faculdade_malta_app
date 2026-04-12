@@ -1,4 +1,6 @@
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = PageController(initialPage: 0);
+  final disciplinasController = PageController(initialPage: 0);
   final bannerController = PageController(initialPage: 0);
 
   bool iSexpanded = false;
@@ -18,6 +21,13 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       iSexpanded = iSexpanded ? false : true;
     });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    bannerController.dispose();
+    super.dispose();
   }
 
   Widget itemWidget(String title, IconData icon) {
@@ -68,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       // botei uma appbar aqui com o tamanho zerado, só pra colorir a parte de cima (barra de notificação)
-      appBar: AppBar(toolbarHeight: 0, backgroundColor: CustomColor.redMalta,),
+      appBar: AppBar(toolbarHeight: 0),
 
       body: SafeArea(
         child: RefreshIndicator(
@@ -84,7 +94,11 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   padding: .all(15),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [CustomColor.redMalta, CustomColor.redMalta2], begin: AlignmentGeometry.topStart, end: AlignmentGeometry.bottomStart),
+                    gradient: LinearGradient(
+                      colors: [CustomColor.redMalta, CustomColor.redMalta2],
+                      begin: AlignmentGeometry.topStart,
+                      end: AlignmentGeometry.bottomStart,
+                    ),
                     borderRadius: .only(
                       bottomLeft: .circular(10),
                       bottomRight: .circular(10),
@@ -120,11 +134,16 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          CircleAvatar(
-                            backgroundColor: CustomColor.branco,
-                            child: Text(
-                              'AS',
-                              style: TextStyle(fontWeight: .w600, fontSize: 20),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, CupertinoPageRoute(builder: (context) => PerfilPage()));
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: CustomColor.branco,
+                              child: Text(
+                                'AS',
+                                style: TextStyle(fontWeight: .w600, fontSize: 20),
+                              ),
                             ),
                           ),
                         ],
@@ -315,7 +334,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 70,
                         child: PageView(
-                          controller: controller,
+                          controller: disciplinasController,
                           allowImplicitScrolling: true,
                           children: [
                             GestureDetector(
@@ -329,31 +348,29 @@ class _HomePageState extends State<HomePage> {
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
 
-                                  child: Expanded(
-                                    child: Column(
-                                      mainAxisAlignment: .center,
-                                      crossAxisAlignment: .start,
-                                      children: [
-                                        Text(
-                                          'INTRODUÇÃO A PEDAGOGIA',
-                                          style: TextStyle(
-                                            overflow: .ellipsis,
-                                            fontWeight: .bold,
-                                            fontSize: 16,
-                                            color: CustomColor.cinza,
-                                          ),
+                                  child: Column(
+                                    mainAxisAlignment: .center,
+                                    crossAxisAlignment: .start,
+                                    children: [
+                                      Text(
+                                        'INTRODUÇÃO A PEDAGOGIA',
+                                        style: TextStyle(
+                                          overflow: .ellipsis,
+                                          fontWeight: .bold,
+                                          fontSize: 16,
+                                          color: CustomColor.cinza,
                                         ),
-                                        Text(
-                                          '4 de 6 modulos',
-                                          style: TextStyle(
-                                            overflow: .ellipsis,
-                                            fontSize: 14,
-                                            color: CustomColor.cinza,
-                                          ),
-                                          maxLines: 1,
+                                      ),
+                                      Text(
+                                        '4 de 6 modulos',
+                                        style: TextStyle(
+                                          overflow: .ellipsis,
+                                          fontSize: 14,
+                                          color: CustomColor.cinza,
                                         ),
-                                      ],
-                                    ),
+                                        maxLines: 1,
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -370,30 +387,28 @@ class _HomePageState extends State<HomePage> {
                                 child: Padding(
                                   padding: .symmetric(horizontal: 25),
 
-                                  child: Expanded(
-                                    child: Column(
-                                      mainAxisAlignment: .center,
-                                      crossAxisAlignment: .start,
-                                      children: [
-                                        Text(
-                                          'CIÊNCIAS SOCIAIS',
-                                          style: TextStyle(
-                                            overflow: .ellipsis,
-                                            fontWeight: .bold,
-                                            fontSize: 16,
-                                            color: CustomColor.cinza,
-                                          ),
+                                  child: Column(
+                                    mainAxisAlignment: .center,
+                                    crossAxisAlignment: .start,
+                                    children: [
+                                      Text(
+                                        'CIÊNCIAS SOCIAIS',
+                                        style: TextStyle(
+                                          overflow: .ellipsis,
+                                          fontWeight: .bold,
+                                          fontSize: 16,
+                                          color: CustomColor.cinza,
                                         ),
-                                        Text(
-                                          '1 de 6 modulos',
-                                          style: TextStyle(
-                                            overflow: .ellipsis,
-                                            fontSize: 14,
-                                          ),
-                                          maxLines: 1,
+                                      ),
+                                      Text(
+                                        '1 de 6 modulos',
+                                        style: TextStyle(
+                                          overflow: .ellipsis,
+                                          fontSize: 14,
                                         ),
-                                      ],
-                                    ),
+                                        maxLines: 1,
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -424,7 +439,7 @@ class _HomePageState extends State<HomePage> {
                       return expandir();
                     },
                     child: Container(
-                      padding: .all(5),
+                      padding: .all(3),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
                         borderRadius: .all(.circular(7)),
@@ -465,7 +480,6 @@ class _HomePageState extends State<HomePage> {
                       controller: bannerController,
                       scrollDirection: .horizontal,
                       children: [
-                        
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -475,7 +489,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                    
+
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -485,7 +499,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                    
+
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: GestureDetector(
@@ -495,7 +509,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),

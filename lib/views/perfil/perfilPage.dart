@@ -79,6 +79,7 @@ class _PerfilPageState extends State<PerfilPage> {
 
                         Expanded(
                           child: Column(
+                            spacing: 5,
                             crossAxisAlignment: .start,
                             children: [
                               Text(
@@ -143,6 +144,7 @@ class _PerfilPageState extends State<PerfilPage> {
 
                         Expanded(
                           child: Column(
+                            spacing: 5,
                             crossAxisAlignment: .start,
                             children: [
                           

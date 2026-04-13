@@ -1,15 +1,11 @@
 import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:flutter/material.dart';
 
-class PerfilPage extends StatefulWidget {
-  const PerfilPage({super.key});
+class PerfilPage extends StatelessWidget {
+  PerfilPage({super.key});
 
-  @override
-  State<PerfilPage> createState() => _PerfilPageState();
-}
-
-class _PerfilPageState extends State<PerfilPage> {
   final controller = PageController(initialPage: 0);
+
   final bannerController = PageController(initialPage: 0);
 
   @override
@@ -161,7 +157,7 @@ class _PerfilPageState extends State<PerfilPage> {
                                   ),
                           
                                   Text(
-                                    'G-2200404',
+                                    'G-000000',
                                     style: TextStyle(
                                       color: CustomColor.branco,
                                       fontSize: 14,
@@ -393,15 +389,10 @@ class _PerfilPageState extends State<PerfilPage> {
                         ],
                       ),
                     ),
-
-
                   ],
                 )
               ),
             ),
-
-
-
           ],
         ),
       ),

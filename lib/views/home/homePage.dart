@@ -1,5 +1,6 @@
 import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
+import 'package:faculdade_malta_app/views/relatorios/relatorios.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +31,11 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  Widget itemWidget(String title, IconData icon) {
+  Widget itemWidget(String title, IconData icon, ) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(context, CupertinoPageRoute(builder: (context) => RelatorioPage(),));
+      },
       child: Container(
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
@@ -420,6 +424,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
+
+                // atalhos
                 Padding(
                   padding: .symmetric(horizontal: 15),
                   child: GridView.count(

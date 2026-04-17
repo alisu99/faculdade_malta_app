@@ -1,7 +1,8 @@
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/financeiro/financeiroPage.dart';
+import 'package:faculdade_malta_app/views/home/selecaoCursos.dart';
 import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
-import 'package:faculdade_malta_app/views/relatorios/relatorios.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:faculdade_malta_app/views/relatorios/relatorioPage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,10 +32,13 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  Widget itemWidget(String title, IconData icon, ) {
+  Widget itemWidget(String title, IconData icon) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, CupertinoPageRoute(builder: (context) => RelatorioPage(),));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FinanceiroPage()),
+        );
       },
       child: Container(
         padding: EdgeInsets.all(8),
@@ -83,7 +87,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       // botei uma appbar aqui com o tamanho zerado, só pra colorir a parte de cima (barra de notificação)
       appBar: AppBar(toolbarHeight: 0),
-
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: () {
@@ -119,34 +122,57 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               SizedBox(height: 30),
 
-                              Text(
-                                'Olá, Alisson!',
-                                style: TextStyle(
-                                  color: CustomColor.branco,
-                                  fontSize: 20,
-                                  fontWeight: .bold,
-                                ),
-                              ),
-
-                              Text(
-                                'Pedagogia EAD',
-                                style: TextStyle(
-                                  color: CustomColor.branco50,
-                                  fontSize: 14,
-                                  fontWeight: .bold,
+                              GestureDetector(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    backgroundColor: CustomColor.background,
+                                    showDragHandle: true,
+                                    builder: (context) {
+                                      return const SelecaoCursos();
+                                    },
+                                  );
+                                },
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Olá, Alisson!',
+                                      style: TextStyle(
+                                        color: CustomColor.branco,
+                                        fontSize: 20,
+                                        fontWeight: .bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Pedagogia EAD >',
+                                      style: TextStyle(
+                                        color: CustomColor.branco50,
+                                        fontSize: 14,
+                                        fontWeight: .bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context, CupertinoPageRoute(builder: (context) => PerfilPage()));
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PerfilPage(),
+                                ),
+                              );
                             },
                             child: CircleAvatar(
                               backgroundColor: CustomColor.branco,
                               child: Text(
                                 'AS',
-                                style: TextStyle(fontWeight: .w600, fontSize: 20),
+                                style: TextStyle(
+                                  fontWeight: .w600,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),
@@ -424,7 +450,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-
                 // atalhos
                 Padding(
                   padding: .symmetric(horizontal: 15),
@@ -445,7 +470,7 @@ class _HomePageState extends State<HomePage> {
                       return expandir();
                     },
                     child: Container(
-                      padding: .all(3),
+                      padding: .all(5),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
                         borderRadius: .all(.circular(7)),
@@ -465,7 +490,7 @@ class _HomePageState extends State<HomePage> {
                             color: CustomColor.redMalta,
                           ),
                           Text(
-                            iSexpanded ? 'Recolher' : 'Expandir',
+                            iSexpanded ? 'Mostrar menos' : 'Mostrar mais',
                             style: TextStyle(
                               color: CustomColor.redMalta,
                               fontWeight: .bold,
@@ -479,39 +504,52 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 Padding(
-                  padding: .symmetric(horizontal: 10),
+                  padding: .symmetric(horizontal: 5),
                   child: SizedBox(
                     height: 380,
                     child: PageView(
                       controller: bannerController,
                       scrollDirection: .horizontal,
                       children: [
+                        
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: GestureDetector(
-                            child: Image.network(
-                              'https://faculdademalta.edu.br/static/assets/media/img/banner_editais_mobile.jpeg',
-                              fit: BoxFit.contain,
+                          child: Card(
+                            clipBehavior: .antiAlias,
+                            child: GestureDetector(
+                              child: Image.network(
+                                'https://faculdademalta.edu.br/static/assets/media/img/banner_editais_mobile.jpeg',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
 
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: GestureDetector(
-                            child: Image.network(
-                              'https://faculdademalta.edu.br/static/assets/media/img/banners/direitomobile.png',
-                              fit: BoxFit.contain,
+                          child: Card(
+                            clipBehavior: .antiAlias,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: .all(.circular(10))
+                            ),
+                            child: GestureDetector(
+                              child: Image.network(
+                                'https://faculdademalta.edu.br/static/assets/media/img/banners/direitomobile.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
 
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: GestureDetector(
-                            child: Image.network(
-                              'https://faculdademalta.edu.br/static/assets/media/img/banners/ssocialmobile.png',
-                              fit: BoxFit.contain,
+                          child: Card(
+                            clipBehavior: .antiAlias,
+                            child: GestureDetector(
+                              child: Image.network(
+                                'https://faculdademalta.edu.br/static/assets/media/img/banners/ssocialmobile.png',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -555,7 +593,7 @@ class _HomePageState extends State<HomePage> {
                             padding: .all(8),
                             decoration: BoxDecoration(
                               color: CustomColor.redMalta,
-                              borderRadius: .all(.circular(6)),
+                              borderRadius: .all(.circular(7)),
                             ),
                             child: Row(
                               mainAxisAlignment: .center,

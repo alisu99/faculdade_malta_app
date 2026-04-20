@@ -7,6 +7,8 @@ class CustomColor {
   static Color ouro50 = Color(0xD4FF9D00);
   static Color ouro = Color(0xFFFF9D00);
   static Color branco = Color(0xFFFFFFFF);
+  static Color azul = Color(0xFF4080BF);
+  static Color amarelo = Color(0xFFFFC300);
   static Color branco50 = Color.fromARGB(178, 255, 255, 255);
   static Color background = Color(0xFFE6E6E6);
   static Color cinza = Color.fromARGB(239, 49, 49, 49);

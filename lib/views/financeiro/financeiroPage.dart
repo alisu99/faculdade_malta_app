@@ -17,19 +17,106 @@ class FinanceiroPage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: .all(10),
-              child: Column(
+        child: Padding(
+          padding: .all(15),
+          child: Column(
+            children: [
+              Column(
                 spacing: 10,
                 children: [
-                  Card(child: Text('Pagina de informações financeiras'),),
-                  
+                  Container(
+                    width: 10 * 100,
+                    decoration: BoxDecoration(
+                      color: CustomColor.branco50,
+                      borderRadius: .all(.circular(5)),
+                    ),
+                    padding: .all(10),
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(
+                          'Legendas',
+                          style: TextStyle(
+                            color: CustomColor.cinza,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+              
+                        Row(
+                          crossAxisAlignment: .center,
+                          spacing: 5,
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              size: 20,
+                              color: CustomColor.amarelo,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Boleto enviado para cobrança terceirizada.',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Divider(),
+              
+                        Row(
+                          crossAxisAlignment: .center,
+                          spacing: 5,
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              size: 20,
+                              color: CustomColor.redMalta,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Opções de pagamento indisponíveis, pois o documento foi cancelado pelo banco.',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        ),
+              
+                        Divider(),
+              
+                        Row(
+                          crossAxisAlignment: .center,
+                          spacing: 5,
+                          children: [
+                            Icon(
+                              Icons.circle,
+                              size: 20,
+                              color: CustomColor.azul,
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Opções de pagamento indisponíveis, pois o boleto encontra-se inativo.',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
+          
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 15,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(child: Text('$index'));
+                  },
+                ),
+              ),
+              
+              
+            ],
+          ),
         ),
       ),
     );

@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                                     backgroundColor: CustomColor.background,
                                     showDragHandle: true,
                                     builder: (context) {
-                                      return const SelecaoCursos();
+                                      return SelecaoCursos();
                                     },
                                   );
                                 },

@@ -1,4 +1,5 @@
 import 'package:flutter/animation.dart';
+import 'package:flutter/material.dart';
 
 class CustomColor {
   static Color redMalta = Color(0xFFCD0C11);
@@ -12,4 +13,5 @@ class CustomColor {
   static Color branco50 = Color.fromARGB(178, 255, 255, 255);
   static Color background = Color(0xFFE6E6E6);
   static Color cinza = Color.fromARGB(239, 49, 49, 49);
+  static Color cinza50 = const Color.fromARGB(131, 0, 0, 0);
 }

@@ -1,4 +1,5 @@
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/financeiro/detalheMensalidade.dart';
 import 'package:flutter/material.dart';
 
 class FinanceiroPage extends StatelessWidget {
@@ -20,6 +21,7 @@ class FinanceiroPage extends StatelessWidget {
         child: Padding(
           padding: .all(15),
           child: Column(
+            spacing: 20,
             children: [
               Column(
                 spacing: 10,
@@ -42,7 +44,7 @@ class FinanceiroPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 10),
-              
+
                         Row(
                           crossAxisAlignment: .center,
                           spacing: 5,
@@ -61,7 +63,7 @@ class FinanceiroPage extends StatelessWidget {
                           ],
                         ),
                         Divider(),
-              
+
                         Row(
                           crossAxisAlignment: .center,
                           spacing: 5,
@@ -79,9 +81,9 @@ class FinanceiroPage extends StatelessWidget {
                             ),
                           ],
                         ),
-              
+
                         Divider(),
-              
+
                         Row(
                           crossAxisAlignment: .center,
                           spacing: 5,
@@ -104,17 +106,83 @@ class FinanceiroPage extends StatelessWidget {
                   ),
                 ],
               ),
-          
+
               Expanded(
                 child: ListView.builder(
-                  itemCount: 15,
+                  itemCount: 6,
+
                   itemBuilder: (context, index) {
-                    return GestureDetector(child: Text('$index'));
+                    return GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          isScrollControlled: true,
+                          showDragHandle: true,
+                          backgroundColor: CustomColor.branco,
+                          context: context,
+                          builder: (context) => DetalheBoleto(),
+                        );
+                      },
+                      child: Container(
+                        padding: .all(15),
+                        decoration: BoxDecoration(
+                          color: CustomColor.branco50,
+                          borderRadius: .all(.circular(5)),
+                          border: Border.all(color: CustomColor.background),
+                        ),
+
+                        child: Row(
+                          mainAxisAlignment: .spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: .start,
+                              children: [
+                                Text(
+                                  'R\$ 157,30',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 16,
+                                    fontWeight: .bold,
+                                  ),
+                                ),
+                                Text(
+                                  'Mens. 0026$index',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 14,
+                                    fontWeight: .bold
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            Column(
+                              crossAxisAlignment: .end,
+                              children: [
+                                Text(
+                                  'Mai/2026',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 14,
+                                    fontWeight: .bold
+                                  ),
+                                ),
+                                Text(
+                                  'A vencer',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 14,
+                                    fontWeight: .bold
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
-              
-              
             ],
           ),
         ),

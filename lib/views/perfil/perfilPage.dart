@@ -58,18 +58,7 @@ class PerfilPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: CustomColor.branco,
                             borderRadius: .all(.circular(100)),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: .center,
-                            children: [
-                              Text(
-                                'AS',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: .bold,
-                                ),
-                              ),
-                            ],
+                            image: DecorationImage(image: NetworkImage('https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg'))
                           ),
                         ),
 
@@ -141,11 +130,11 @@ class PerfilPage extends StatelessWidget {
                         Expanded(
                           child: Column(
                             spacing: 5,
-                            crossAxisAlignment: .start,
+                            crossAxisAlignment: .end,
                             children: [
                           
                               Column(
-                                crossAxisAlignment: .start,
+                                crossAxisAlignment: .end,
                                 children: [
                                   Text(
                                     'RA',
@@ -168,7 +157,7 @@ class PerfilPage extends StatelessWidget {
                               ),
                           
                               Column(
-                                crossAxisAlignment: .start,
+                                crossAxisAlignment: .end,
                                 children: [
                                   Text(
                                     'Habilitação',
@@ -191,7 +180,7 @@ class PerfilPage extends StatelessWidget {
                               ),
                           
                               Column(
-                                crossAxisAlignment: .start,
+                                crossAxisAlignment: .end,
                                 children: [
                                   Text(
                                     'Turno',
@@ -221,8 +210,6 @@ class PerfilPage extends StatelessWidget {
                     // linha do nível e email
                     Row(
                       crossAxisAlignment: .end,
-                      mainAxisAlignment: .spaceBetween,
-                      spacing: 10,
                       children: [
                         // coluna do nivel
                         Column(
@@ -258,6 +245,7 @@ class PerfilPage extends StatelessWidget {
                         Expanded(
                           child: Text(
                             'alissonsts910@gmail.com',
+                            textAlign: .end,
                             style: TextStyle(
                               color: CustomColor.branco,
                               fontSize: 14,

@@ -39,7 +39,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                             child: Column(
                               crossAxisAlignment: .start,
                               children: [
-                                Text('PEDAGOGIA (EAD)', style: TextStyle(color: const Color.fromARGB(154, 0, 0, 0), fontSize: 14, fontWeight: .bold),),
+                                Text('PEDAGOGIA (EAD)', style: TextStyle(color: CustomColor.cinza, fontSize: 14, fontWeight: .bold),),
                                 Text('Habilitação: PEDAGOGIA', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                                 Text('Período letivo: 2025.1', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                               ],
@@ -63,7 +63,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                             child: Column(
                               crossAxisAlignment: .start,
                               children: [
-                                Text('ATENDIMENTO EDUCACIONAL ESPECIALIZADO - AEE (DOMINGO)', style: TextStyle(color: const Color.fromARGB(154, 0, 0, 0), fontSize: 14, fontWeight: .bold),),
+                                Text('ATENDIMENTO EDUCACIONAL ESPECIALIZADO - AEE (DOMINGO)', style: TextStyle(color: CustomColor.cinza, fontSize: 14, fontWeight: .bold),),
                                 Text('Habilitação: LATO SENSU', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                                 Text('Período letivo: 2025.1', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                               ],
@@ -87,7 +87,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                             child: Column(
                               crossAxisAlignment: .start,
                               children: [
-                                Text('PSICOPEDAGOGIA CLÍNICA E INSTITUCIONAL (DOMINGO)', style: TextStyle(color: const Color.fromARGB(154, 0, 0, 0), fontSize: 14, fontWeight: .bold),),
+                                Text('PSICOPEDAGOGIA CLÍNICA E INSTITUCIONAL (DOMINGO)', style: TextStyle(color: CustomColor.cinza, fontSize: 14, fontWeight: .bold),),
                                 Text('Habilitação: LATO SENSU', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                                 Text('Período letivo: 2025.1', style: TextStyle(color: CustomColor.cinza, fontSize: 14),),
                               ],

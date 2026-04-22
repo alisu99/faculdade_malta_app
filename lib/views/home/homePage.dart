@@ -167,13 +167,10 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: CircleAvatar(
                               backgroundColor: CustomColor.branco,
-                              child: Text(
-                                'AS',
-                                style: TextStyle(
-                                  fontWeight: .w600,
-                                  fontSize: 20,
-                                ),
+                              backgroundImage: NetworkImage(
+                                'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
                               ),
+
                             ),
                           ),
                         ],
@@ -511,7 +508,6 @@ class _HomePageState extends State<HomePage> {
                       controller: bannerController,
                       scrollDirection: .horizontal,
                       children: [
-                        
                         Padding(
                           padding: .symmetric(horizontal: 8),
                           child: Card(
@@ -530,7 +526,7 @@ class _HomePageState extends State<HomePage> {
                           child: Card(
                             clipBehavior: .antiAlias,
                             shape: RoundedRectangleBorder(
-                              borderRadius: .all(.circular(10))
+                              borderRadius: .all(.circular(10)),
                             ),
                             child: GestureDetector(
                               child: Image.network(

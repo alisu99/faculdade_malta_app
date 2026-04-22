@@ -40,7 +40,7 @@ class DetalheBoleto extends StatelessWidget {
                     'Alisson Gustavo Alencar Santos',
                     style: TextStyle(
                       color: CustomColor.cinza,
-                      fontSize: 18,
+                      fontSize: 17,
                       fontWeight: .bold,
                     ),
                   ),
@@ -66,7 +66,7 @@ class DetalheBoleto extends StatelessWidget {
                         'R\$ 250,00',
                         style: TextStyle(
                           color: CustomColor.cinza,
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: .bold,
                         ),
                       ),
@@ -89,7 +89,7 @@ class DetalheBoleto extends StatelessWidget {
                         'R\$ 157,26',
                         style: TextStyle(
                           color: CustomColor.cinza,
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: .bold,
                         ),
                       ),
@@ -117,7 +117,7 @@ class DetalheBoleto extends StatelessWidget {
                         'Mai/2026',
                         style: TextStyle(
                           color: CustomColor.cinza,
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: .bold,
                         ),
                       ),
@@ -140,7 +140,7 @@ class DetalheBoleto extends StatelessWidget {
                         '23/05/2026',
                         style: TextStyle(
                           color: CustomColor.cinza,
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: .bold,
                         ),
                       ),
@@ -165,7 +165,7 @@ class DetalheBoleto extends StatelessWidget {
                               fontWeight: .bold,
                             ),
                           ),
-                      
+
                           Expanded(
                             child: Text(
                               'Pedagogia',
@@ -173,16 +173,15 @@ class DetalheBoleto extends StatelessWidget {
                               overflow: .ellipsis,
                               style: TextStyle(
                                 color: CustomColor.cinza,
-                                fontSize: 18,
+                                fontSize: 17,
                                 fontWeight: .bold,
-                                
                               ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                
+
                     Expanded(
                       child: Column(
                         crossAxisAlignment: .end,
@@ -195,7 +194,7 @@ class DetalheBoleto extends StatelessWidget {
                               fontWeight: .bold,
                             ),
                           ),
-                                      
+
                           Expanded(
                             child: Text(
                               'Pedagogia',
@@ -203,9 +202,8 @@ class DetalheBoleto extends StatelessWidget {
                               overflow: .ellipsis,
                               style: TextStyle(
                                 color: CustomColor.cinza,
-                                fontSize: 18,
+                                fontSize: 17,
                                 fontWeight: .bold,
-                                
                               ),
                             ),
                           ),
@@ -216,14 +214,34 @@ class DetalheBoleto extends StatelessWidget {
                 ),
               ),
 
-              
-
               Text('Id: 908767670980-8'),
 
               Column(
                 spacing: 5,
                 children: [
                   GestureDetector(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Pix copiado!',
+                            style: TextStyle(color: CustomColor.branco, fontSize: 16, fontWeight: .bold),
+                          ),
+                          duration: Duration(milliseconds: 2000),
+                          width: MediaQuery.of(context).size.width * 0.90,
+                          padding: .all(12),
+                          behavior: SnackBarBehavior.floating,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          elevation: 10,
+                          backgroundColor: CustomColor.redMalta,
+                        ),
+                      );
+
+                      Navigator.pop(context);
+                    },
+
                     child: Container(
                       width: 10 * 100,
                       padding: .all(10),
@@ -245,7 +263,7 @@ class DetalheBoleto extends StatelessWidget {
                             style: TextStyle(
                               color: CustomColor.redMalta,
                               fontWeight: .bold,
-                              fontSize: 18,
+                              fontSize: 17,
                             ),
                           ),
                         ],
@@ -254,6 +272,31 @@ class DetalheBoleto extends StatelessWidget {
                   ),
 
                   GestureDetector(
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Código de barras copiado!',
+                            style: TextStyle(color: CustomColor.branco, fontSize: 16, fontWeight: .bold),
+                          ),
+                          duration: Duration(milliseconds: 2000),
+                          width: MediaQuery.of(context).size.width * 0.90,
+                          animation: AlwaysStoppedAnimation(
+                            CircularProgressIndicator.strokeAlignCenter,
+                          ),
+                          padding: .all(12),
+                          behavior: SnackBarBehavior.floating,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          elevation: 10,
+                          backgroundColor: CustomColor.redMalta,
+                        ),
+                      );
+
+                      Navigator.pop(context);
+                    },
+
                     child: Container(
                       width: 10 * 100,
                       padding: .all(10),
@@ -274,7 +317,7 @@ class DetalheBoleto extends StatelessWidget {
                             style: TextStyle(
                               color: CustomColor.branco,
                               fontWeight: .bold,
-                              fontSize: 18,
+                              fontSize: 17,
                             ),
                           ),
                         ],

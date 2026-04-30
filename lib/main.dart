@@ -1,5 +1,6 @@
 import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/auth/loginScreen.dart';
 import 'package:faculdade_malta_app/views/home/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,8 +26,11 @@ class MainApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      routes: {'homepage': (context) => HomePage()},
-      initialRoute: 'homepage',
+      routes: {
+        'homepage': (context) => HomePage(),
+        'login': (context) => LoginScreen(),
+        },
+      initialRoute: 'login',
     );
   }
 }

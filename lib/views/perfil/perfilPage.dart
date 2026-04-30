@@ -406,13 +406,59 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
+                    // testando o provider
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     return aluno.alterarNome(
+                    //       aluno.nome == 'Alisson' ? 'Gustavo' : 'Alisson',
+                    //     );
+                    //   },
+                    //   child: Text('Alterar nome'),
+                    // ),
                     ElevatedButton(
-                      onPressed: () {
-                        return aluno.alterarNome(
-                          aluno.nome == 'Alisson' ? 'Gustavo' : 'Alisson',
-                        );
-                      },
-                      child: Text('Alterar nome'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: CustomColor.redMalta,
+                        overlayColor: CustomColor.branco,
+                      ),
+                      onPressed: () => showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            
+                            title: Text('Deseja encerrar a sessão?', style: TextStyle(fontSize: 18),),
+
+                            actions: [
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  overlayColor: Colors.transparent
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text('Cancelar', style: TextStyle(color: CustomColor.cinza, fontSize: 18, fontWeight: .bold),),
+                              ),
+
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  overlayColor: Colors.transparent
+                                ),
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(context, 'login');
+                                },
+                                child: Text('Sim, quero sair', style: TextStyle(color: CustomColor.cinza, fontSize: 18, fontWeight: .bold),),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                      child: Text(
+                        'Sair',
+                        style: TextStyle(
+                          color: CustomColor.branco,
+                          fontSize: 16,
+                          fontWeight: .bold,
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -1,10 +1,12 @@
+import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:faculdade_malta_app/views/home/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(ChangeNotifierProvider(create: (_) => Aluno(), child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -21,7 +23,6 @@ class MainApp extends StatelessWidget {
           iconTheme: IconThemeData(color: CustomColor.branco),
           titleTextStyle: TextStyle(fontSize: 16, fontWeight: .bold),
           centerTitle: true,
-          
         ),
       ),
       routes: {'homepage': (context) => HomePage()},

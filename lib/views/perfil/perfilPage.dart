@@ -1,5 +1,7 @@
+import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PerfilPage extends StatelessWidget {
   PerfilPage({super.key});
@@ -10,6 +12,7 @@ class PerfilPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final aluno = context.watch<Aluno>();
     return Scaffold(
       appBar: AppBar(title: Text('Meu perfil')),
 
@@ -58,7 +61,11 @@ class PerfilPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: CustomColor.branco,
                             borderRadius: .all(.circular(100)),
-                            image: DecorationImage(image: NetworkImage('https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg'))
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
+                              ),
+                            ),
                           ),
                         ),
 
@@ -73,10 +80,9 @@ class PerfilPage extends StatelessWidget {
                                   color: CustomColor.branco,
                                   fontSize: 14,
                                   fontWeight: .bold,
-                                  
                                 ),
                               ),
-                          
+
                               Column(
                                 crossAxisAlignment: .start,
                                 children: [
@@ -88,7 +94,7 @@ class PerfilPage extends StatelessWidget {
                                       fontWeight: .bold,
                                     ),
                                   ),
-                          
+
                                   Text(
                                     'Pedagogia',
                                     style: TextStyle(
@@ -99,7 +105,7 @@ class PerfilPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                          
+
                               Column(
                                 crossAxisAlignment: .start,
                                 children: [
@@ -111,7 +117,7 @@ class PerfilPage extends StatelessWidget {
                                       fontWeight: .bold,
                                     ),
                                   ),
-                          
+
                                   Text(
                                     'DEZ/2030',
                                     style: TextStyle(
@@ -126,13 +132,11 @@ class PerfilPage extends StatelessWidget {
                           ),
                         ),
 
-
                         Expanded(
                           child: Column(
                             spacing: 5,
                             crossAxisAlignment: .end,
                             children: [
-                          
                               Column(
                                 crossAxisAlignment: .end,
                                 children: [
@@ -144,7 +148,7 @@ class PerfilPage extends StatelessWidget {
                                       fontWeight: .bold,
                                     ),
                                   ),
-                          
+
                                   Text(
                                     'G-000000',
                                     style: TextStyle(
@@ -155,7 +159,7 @@ class PerfilPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                          
+
                               Column(
                                 crossAxisAlignment: .end,
                                 children: [
@@ -167,7 +171,7 @@ class PerfilPage extends StatelessWidget {
                                       fontWeight: .bold,
                                     ),
                                   ),
-                          
+
                                   Text(
                                     'Pedagogia',
                                     style: TextStyle(
@@ -178,7 +182,7 @@ class PerfilPage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                          
+
                               Column(
                                 crossAxisAlignment: .end,
                                 children: [
@@ -190,7 +194,7 @@ class PerfilPage extends StatelessWidget {
                                       fontWeight: .bold,
                                     ),
                                   ),
-                          
+
                                   Text(
                                     'EAD',
                                     style: TextStyle(
@@ -308,8 +312,6 @@ class PerfilPage extends StatelessWidget {
               ),
             ),
 
-
-
             Padding(
               padding: .symmetric(horizontal: 15),
               child: Container(
@@ -328,8 +330,15 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Dados pessoais', style: TextStyle(fontSize: 16,)),
-                          Icon(Icons.keyboard_arrow_right_outlined, size: 30, color: const Color.fromARGB(255, 117, 117, 117),)
+                          Text(
+                            'Dados pessoais',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: const Color.fromARGB(255, 117, 117, 117),
+                          ),
                         ],
                       ),
                     ),
@@ -339,8 +348,15 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Dados profissionais', style: TextStyle(fontSize: 16,)),
-                          Icon(Icons.keyboard_arrow_right_outlined, size: 30, color: const Color.fromARGB(255, 117, 117, 117),)
+                          Text(
+                            'Dados profissionais',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: const Color.fromARGB(255, 117, 117, 117),
+                          ),
                         ],
                       ),
                     ),
@@ -350,8 +366,12 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Responsáveis', style: TextStyle(fontSize: 16,)),
-                          Icon(Icons.keyboard_arrow_right_outlined, size: 30, color: const Color.fromARGB(255, 117, 117, 117),)
+                          Text('Responsáveis', style: TextStyle(fontSize: 16)),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: const Color.fromARGB(255, 117, 117, 117),
+                          ),
                         ],
                       ),
                     ),
@@ -361,8 +381,12 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Ficha médica', style: TextStyle(fontSize: 16,)),
-                          Icon(Icons.keyboard_arrow_right_outlined, size: 30, color: const Color.fromARGB(255, 117, 117, 117),)
+                          Text('Ficha médica', style: TextStyle(fontSize: 16)),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: const Color.fromARGB(255, 117, 117, 117),
+                          ),
                         ],
                       ),
                     ),
@@ -372,13 +396,26 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Documentos', style: TextStyle(fontSize: 16,)),
-                          Icon(Icons.keyboard_arrow_right_outlined, size: 30, color: const Color.fromARGB(255, 117, 117, 117),)
+                          Text('Documentos', style: TextStyle(fontSize: 16)),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: const Color.fromARGB(255, 117, 117, 117),
+                          ),
                         ],
                       ),
+                    ),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        return aluno.alterarNome(
+                          aluno.nome == 'Alisson' ? 'Gustavo' : 'Alisson',
+                        );
+                      },
+                      child: Text('Alterar nome'),
                     ),
                   ],
-                )
+                ),
               ),
             ),
           ],

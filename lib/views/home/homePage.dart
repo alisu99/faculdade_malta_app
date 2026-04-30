@@ -1,9 +1,10 @@
+import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:faculdade_malta_app/views/financeiro/financeiroPage.dart';
 import 'package:faculdade_malta_app/views/home/selecaoCursos.dart';
 import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
-import 'package:faculdade_malta_app/views/relatorios/relatorioPage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   final controller = PageController(initialPage: 0);
   final disciplinasController = PageController(initialPage: 0);
   final bannerController = PageController(initialPage: 0);
-
   bool iSexpanded = false;
 
   void expandir() {
@@ -84,6 +84,8 @@ class _HomePageState extends State<HomePage> {
       itemWidget('Malta UP', Icons.link),
     ];
 
+    final aluno = context.watch<Aluno>();
+
     return Scaffold(
       // botei uma appbar aqui com o tamanho zerado, só pra colorir a parte de cima (barra de notificação)
       appBar: AppBar(toolbarHeight: 0),
@@ -134,9 +136,10 @@ class _HomePageState extends State<HomePage> {
                                   );
                                 },
                                 child: Column(
+                                  crossAxisAlignment: .start,
                                   children: [
                                     Text(
-                                      'Olá, Alisson!',
+                                      'Olá, ${aluno.nome}!',
                                       style: TextStyle(
                                         color: CustomColor.branco,
                                         fontSize: 20,
@@ -170,7 +173,6 @@ class _HomePageState extends State<HomePage> {
                               backgroundImage: NetworkImage(
                                 'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
                               ),
-
                             ),
                           ),
                         ],

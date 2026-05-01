@@ -3,6 +3,7 @@ import 'package:faculdade_malta_app/styles/colors.dart';
 import 'package:faculdade_malta_app/views/financeiro/financeiroPage.dart';
 import 'package:faculdade_malta_app/views/home/selecaoCursos.dart';
 import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
+import 'package:faculdade_malta_app/views/polos/polos.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => FinanceiroPage()),
+          MaterialPageRoute(builder: (context) => PolosPage()),
         );
       },
       child: Container(
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
       itemWidget('Ouvidoria', Icons.headset_mic_outlined),
       itemWidget('Central do aluno', Icons.school),
       itemWidget('Carreiras', Icons.work_outline_rounded),
-      itemWidget('Malta UP', Icons.link),
+      itemWidget('Polos', Icons.pin_drop_outlined),
     ];
 
     final aluno = context.watch<Aluno>();
@@ -452,13 +453,27 @@ class _HomePageState extends State<HomePage> {
                 // atalhos
                 Padding(
                   padding: .symmetric(horizontal: 15),
-                  child: GridView.count(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    children: iSexpanded ? items : items.take(3).toList(),
+                  child: Column(
+                    crossAxisAlignment: .start,
+                    spacing: 5,
+                    children: [
+                      Text(
+                        'Atalhos',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: CustomColor.cinza,
+                          fontWeight: .w600,
+                        ),
+                      ),
+                      GridView.count(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        children: iSexpanded ? items : items.take(3).toList(),
+                      ),
+                    ],
                   ),
                 ),
 

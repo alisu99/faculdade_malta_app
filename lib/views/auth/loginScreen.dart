@@ -15,39 +15,81 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: CustomColor.branco,
       body: SingleChildScrollView(
         child: Column(
+          spacing: 10,
           children: [
             Container(
+              padding: .all(20),
+              height: MediaQuery.of(context).size.height * 0.50,
+              width: 10 * 100,
               clipBehavior: .antiAlias,
               decoration: BoxDecoration(
-                borderRadius: .only(bottomRight: .circular(100)),
+                borderRadius: .only(bottomRight: .circular(70)),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/tela-login-image.png'),
+                  fit: .cover,
+                ),
               ),
-              child: Image.asset('assets/images/tela-login-image.png'),
+              child: Stack(
+                alignment: AlignmentGeometry.bottomLeft,
+                children: [
+                  Image.network('https://faculdademalta.edu.br/static/assets/media/img/logo-malta-branco.png', scale: 30,)
+                ],
+              ),
             ),
 
             Padding(
-              padding: .symmetric(horizontal: 22, vertical: 25),
+              padding: .all(15),
               child: Column(
                 children: [
-                  Image.asset('assets/images/logo-vermelha.png', scale: 50),
-
                   Column(
-                    spacing: 20,
+                    spacing: 10,
+                    crossAxisAlignment: .start,
                     children: [
-                      
-                      
+                      // Text(
+                      //   'Que bom te ter de volta!',
+                      //   style: TextStyle(
+                      //     color: CustomColor.redMalta,
+                      //     fontSize: 18,
+                      //     fontWeight: .bold,
+                      //   ),
+                      // ),
+
                       TextField(
                         decoration: InputDecoration(
-                          label: Text(
-                            'Usuário',
-                            style: TextStyle(
-                              color: CustomColor.cinza,
-                              fontSize: 16,
-                              fontWeight: .bold,
+                          label: Row(
+                            mainAxisSize: .min,
+                            children: [
+                              Icon(
+                                Icons.person,
+                                size: 15,
+                                color: CustomColor.cinza50,
+                              ),
+                              Text(
+                                'Usuário',
+                                style: TextStyle(
+                                  color: CustomColor.cinza50,
+                                  fontWeight: .bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          contentPadding: .all(15),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: .circular(10),
+                            borderSide: BorderSide(
+                              color: CustomColor.gainsboro,
+                              width: 1.5,
                             ),
                           ),
-                          
-                          focusColor: CustomColor.cinza,
-
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: .circular(10),
+                            borderSide: BorderSide(
+                              color: CustomColor.redMalta,
+                              width: 1.5,
+                            ),
+                          ),
                           hintText: 'Digite seu RA ou usuário',
                           hintStyle: TextStyle(
                             color: const Color.fromARGB(112, 0, 0, 0),
@@ -56,53 +98,60 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
 
-                      Row(
-                        crossAxisAlignment: .end,
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              decoration: InputDecoration(
-                                label: Text(
-                                  'Senha',
-                                  style: TextStyle(
-                                    color: CustomColor.cinza,
-                                    fontSize: 16,
-                                    fontWeight: .bold,
-                                  ),
-                                ),
-                                hintText: 'Digite sua senha',
-                                hintStyle: TextStyle(
-                                  color: const Color.fromARGB(112, 0, 0, 0),
+                      TextField(
+                        decoration: InputDecoration(
+                          label: Row(
+                            mainAxisSize: .min,
+                            children: [
+                              Icon(
+                                Icons.lock_open,
+                                size: 15,
+                                color: CustomColor.cinza50,
+                              ),
+                              Text(
+                                'Senha',
+                                style: TextStyle(
+                                  color: CustomColor.cinza50,
                                   fontWeight: .bold,
                                 ),
                               ),
+                            ],
+                          ),
+
+                          contentPadding: .all(15),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: .circular(10),
+                            borderSide: BorderSide(
+                              color: CustomColor.gainsboro,
+                              width: 1.5,
                             ),
                           ),
 
-                          GestureDetector(
-                            child: Container(
-                              padding: .all(5),
-                              decoration: BoxDecoration(
-                                color: CustomColor.background,
-                                borderRadius: .all(.circular(5)),
-                              ),
-
-                              child: Icon(
-                                Icons.visibility,
-                                color: CustomColor.cinza,
-                              ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: .circular(10),
+                            borderSide: BorderSide(
+                              color: CustomColor.redMalta,
+                              width: 1.5,
                             ),
                           ),
-                        ],
+
+                          focusColor: CustomColor.cinza,
+
+                          hintText: 'Digite sua senha',
+                          hintStyle: TextStyle(
+                            color: const Color.fromARGB(112, 0, 0, 0),
+                            fontWeight: .bold,
+                          ),
+                        ),
                       ),
 
                       Row(
                         mainAxisAlignment: .end,
                         children: [
-                          TextButton(
-                            onPressed: () {},
+                          GestureDetector(
+                            onTap: () {},
                             child: Text(
-                              'Esqueci minha senha',
+                              'Recuperar senha',
                               style: TextStyle(
                                 color: CustomColor.redMalta,
                                 fontSize: 15,
@@ -114,16 +163,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
 
                       Column(
-                        spacing: 8,
+                        spacing: 15,
                         children: [
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: CustomColor.redMalta,
                               overlayColor: CustomColor.branco,
-                              padding: .all(12),
+                              padding: .all(10),
 
                               shape: RoundedRectangleBorder(
-                                borderRadius: .all(.circular(8)),
+                                borderRadius: .all(.circular(5)),
                               ),
                             ),
 
@@ -142,11 +191,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   style: TextStyle(
                                     color: CustomColor.branco,
                                     fontWeight: .bold,
-                                    fontSize: 17,
+                                    fontSize: 16,
                                   ),
                                 ),
                                 Icon(
-                                  Icons.login,
+                                  Icons.login_sharp,
                                   size: 20,
                                   color: CustomColor.branco,
                                 ),
@@ -188,12 +237,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: CustomColor.branco,
                               overlayColor: CustomColor.redMalta,
-                              padding: .all(12),
+                              padding: .all(10),
                               shape: RoundedRectangleBorder(
-                                borderRadius: .all(.circular(8)),
+                                borderRadius: .all(.circular(5)),
                                 side: BorderSide(
                                   color: CustomColor.redMalta,
-                                  width: 2,
+                                  width: 1.5,
                                 ),
                               ),
                             ),
@@ -208,7 +257,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   style: TextStyle(
                                     color: CustomColor.redMalta,
                                     fontWeight: .bold,
-                                    fontSize: 17,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ],

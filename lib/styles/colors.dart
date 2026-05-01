@@ -14,4 +14,5 @@ class CustomColor {
   static Color background = Color(0xFFE6E6E6);
   static Color cinza = Color.fromARGB(239, 49, 49, 49);
   static Color cinza50 = const Color.fromARGB(131, 0, 0, 0);
+  static Color gainsboro = Color(0xFFDCDCDC);
 }

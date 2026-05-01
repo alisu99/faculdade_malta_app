@@ -110,7 +110,6 @@ class FinanceiroPage extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemCount: 6,
-
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -124,10 +123,10 @@ class FinanceiroPage extends StatelessWidget {
                       },
                       child: Container(
                         padding: .all(15),
+                        margin: .only(top: 2, bottom: 2),
                         decoration: BoxDecoration(
-                          color: CustomColor.branco50,
+                          color: CustomColor.branco,
                           borderRadius: .all(.circular(5)),
-                          border: Border.all(color: CustomColor.background),
                         ),
 
                         child: Row(

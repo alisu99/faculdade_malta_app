@@ -67,7 +67,7 @@ class PolosPage extends StatelessWidget {
                       margin: .only(top: 2, bottom: 2),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
-                        borderRadius: .all(.circular(5)),
+                        borderRadius: .all(.circular(7)),
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 1,
@@ -94,7 +94,7 @@ class PolosPage extends StatelessWidget {
                                 scale: 20,
                                 fit: .cover,
                               ),
-                              borderRadius: .circular(5),
+                              borderRadius: .circular(f7),
                             ),
                           ),
 

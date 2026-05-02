@@ -45,7 +45,7 @@ class PerfilPage extends StatelessWidget {
                     ),
                   ],
                   color: CustomColor.redMalta3,
-                  borderRadius: .all(.circular(10)),
+                  borderRadius: .all(.circular(7)),
                   border: BoxBorder.all(color: CustomColor.branco50, width: 1),
                 ),
                 padding: .all(15),

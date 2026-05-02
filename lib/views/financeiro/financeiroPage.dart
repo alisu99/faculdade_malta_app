@@ -30,7 +30,7 @@ class FinanceiroPage extends StatelessWidget {
                     width: 10 * 100,
                     decoration: BoxDecoration(
                       color: CustomColor.branco50,
-                      borderRadius: .all(.circular(5)),
+                      borderRadius: .all(.circular(7)),
                     ),
                     padding: .all(10),
                     child: Column(
@@ -126,7 +126,7 @@ class FinanceiroPage extends StatelessWidget {
                         margin: .only(top: 2, bottom: 2),
                         decoration: BoxDecoration(
                           color: CustomColor.branco,
-                          borderRadius: .all(.circular(5)),
+                          borderRadius: .all(.circular(7)),
                         ),
 
                         child: Row(

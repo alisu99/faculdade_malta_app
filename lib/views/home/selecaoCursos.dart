@@ -29,7 +29,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                       padding: .all(10),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10))
+                        borderRadius: .all(.circular(7))
                       ),
                       child: Row(
                         children: [
@@ -53,7 +53,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                       padding: .all(10),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10))
+                        borderRadius: .all(.circular(7))
                       ),
                       child: Row(
                         children: [
@@ -77,7 +77,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                       padding: .all(10),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10))
+                        borderRadius: .all(.circular(7))
                       ),
                       child: Row(
                         children: [

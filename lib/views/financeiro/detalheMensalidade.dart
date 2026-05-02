@@ -232,7 +232,7 @@ class DetalheBoleto extends StatelessWidget {
                           padding: .all(12),
                           behavior: SnackBarBehavior.floating,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(7),
                           ),
                           elevation: 10,
                           backgroundColor: CustomColor.redMalta,
@@ -247,7 +247,7 @@ class DetalheBoleto extends StatelessWidget {
                       padding: .all(10),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
-                        borderRadius: .all(.circular(5)),
+                        borderRadius: .all(.circular(7)),
                         border: Border.all(
                           color: CustomColor.redMalta,
                           width: 1.5,
@@ -287,7 +287,7 @@ class DetalheBoleto extends StatelessWidget {
                           padding: .all(12),
                           behavior: SnackBarBehavior.floating,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(7),
                           ),
                           elevation: 10,
                           backgroundColor: CustomColor.redMalta,
@@ -302,7 +302,7 @@ class DetalheBoleto extends StatelessWidget {
                       padding: .all(10),
                       decoration: BoxDecoration(
                         color: CustomColor.redMalta,
-                        borderRadius: .all(.circular(5)),
+                        borderRadius: .all(.circular(7)),
                       ),
                       child: Row(
                         spacing: 4,

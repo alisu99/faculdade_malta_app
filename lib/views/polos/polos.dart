@@ -94,7 +94,7 @@ class PolosPage extends StatelessWidget {
                                 scale: 20,
                                 fit: .cover,
                               ),
-                              borderRadius: .circular(f7),
+                              borderRadius: .circular(SA7),
                             ),
                           ),
 

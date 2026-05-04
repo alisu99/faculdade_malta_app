@@ -148,7 +148,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Row(
                         mainAxisAlignment: .end,
                         children: [
-                          GestureDetector(
+                          InkWell(
                             onTap: () {},
                             child: Text(
                               'Recuperar senha',

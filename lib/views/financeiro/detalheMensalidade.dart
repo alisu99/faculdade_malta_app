@@ -219,7 +219,7 @@ class DetalheBoleto extends StatelessWidget {
               Column(
                 spacing: 5,
                 children: [
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -271,7 +271,7 @@ class DetalheBoleto extends StatelessWidget {
                     ),
                   ),
 
-                  GestureDetector(
+                  InkWell(
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(

@@ -4,6 +4,7 @@ import 'package:faculdade_malta_app/views/financeiro/financeiroPage.dart';
 import 'package:faculdade_malta_app/views/home/selecaoCursos.dart';
 import 'package:faculdade_malta_app/views/perfil/perfilPage.dart';
 import 'package:faculdade_malta_app/views/polos/polos.dart';
+import 'package:faculdade_malta_app/views/relatorios/relatorioPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -33,12 +34,12 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  Widget itemWidget(String title, IconData icon) {
-    return GestureDetector(
+  Widget itemWidget(String title, IconData icon, tela) {
+    return InkWell(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PolosPage()),
+          MaterialPageRoute(builder: (context) => tela),
         );
       },
       child: Container(
@@ -74,15 +75,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> items = [
-      itemWidget('Calendário acadêmico', Icons.calendar_month_outlined),
-      itemWidget('Grade curricular', Icons.grid_view),
-      itemWidget('Secretaria', Icons.menu_book_rounded),
-      itemWidget('Financeiro', Icons.monetization_on),
-      itemWidget('Relatórios', Icons.edit_document),
-      itemWidget('Ouvidoria', Icons.headset_mic_outlined),
-      itemWidget('Central do aluno', Icons.school),
-      itemWidget('Carreiras', Icons.work_outline_rounded),
-      itemWidget('Polos', Icons.pin_drop_outlined),
+      itemWidget('Calendário acadêmico', Icons.calendar_month_outlined, PerfilPage()),
+      // itemWidget('Grade curricular', Icons.grid_view),
+      // itemWidget('Secretaria', Icons.menu_book_rounded),
+      itemWidget('Financeiro', Icons.monetization_on, FinanceiroPage()),
+      itemWidget('Relatórios', Icons.edit_document, RelatorioPage()),
+      // itemWidget('Ouvidoria', Icons.headset_mic_outlined),
+      itemWidget('Central do aluno', Icons.school, FinanceiroPage()),
+      // itemWidget('Carreiras', Icons.work_outline_rounded),
+      itemWidget('Polos', Icons.pin_drop_outlined, PolosPage()),
     ];
 
     final aluno = context.watch<Aluno>();
@@ -120,47 +121,53 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: .start,
-                            children: [
-                              SizedBox(height: 30),
-
-                              GestureDetector(
-                                onTap: () {
-                                  showModalBottomSheet(
-                                    context: context,
-                                    backgroundColor: CustomColor.background,
-                                    showDragHandle: true,
-                                    builder: (context) {
-                                      return SelecaoCursos();
-                                    },
-                                  );
-                                },
-                                child: Column(
-                                  crossAxisAlignment: .start,
-                                  children: [
-                                    Text(
-                                      'Olá, ${aluno.nome}!',
-                                      style: TextStyle(
-                                        color: CustomColor.branco,
-                                        fontSize: 20,
-                                        fontWeight: .bold,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: .start,
+                              children: [
+                                SizedBox(height: 30),
+                            
+                                InkWell(
+                                  onTap: () {
+                                    showModalBottomSheet(
+                                      context: context,
+                                      backgroundColor: CustomColor.background,
+                                      showDragHandle: true,
+                                      builder: (context) {
+                                        return SelecaoCursos();
+                                      },
+                                    );
+                                  },
+                                  child: Column(
+                                    crossAxisAlignment: .start,
+                                    children: [
+                                      Text(
+                                        'Olá, ${aluno.nome.split(' ').first}!',
+                                        style: TextStyle(
+                                          color: CustomColor.branco,
+                                          fontSize: 20,
+                                          fontWeight: .bold,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: .ellipsis,
                                       ),
-                                    ),
-                                    Text(
-                                      'Pedagogia EAD >',
-                                      style: TextStyle(
-                                        color: CustomColor.branco50,
-                                        fontSize: 14,
-                                        fontWeight: .bold,
+                                      Text(
+                                        'Pedagogia EAD >',
+                                        style: TextStyle(
+                                          color: CustomColor.branco50,
+                                          fontSize: 14,
+                                          fontWeight: .bold,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: .ellipsis,
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -169,12 +176,19 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               );
                             },
-                            child: CircleAvatar(
+                            child: Container(
+                              padding: .all(1),
+                              decoration: BoxDecoration(
+                                color: CustomColor.ouro,
+                                shape: BoxShape.circle,
+                              ),
+                              child: CircleAvatar(
                               backgroundColor: CustomColor.branco,
                               backgroundImage: NetworkImage(
                                 'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
                               ),
                             ),
+                            )
                           ),
                         ],
                       ),
@@ -185,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                           controller: controller,
                           allowImplicitScrolling: true,
                           children: [
-                            GestureDetector(
+                            InkWell(
                               onTap: () {},
                               child: Container(
                                 margin: .symmetric(horizontal: 3),
@@ -236,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
 
-                            GestureDetector(
+                            InkWell(
                               onTap: () {},
                               child: Container(
                                 margin: .symmetric(horizontal: 3),
@@ -287,7 +301,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
 
-                            GestureDetector(
+                            InkWell(
                               onTap: () {},
                               child: Container(
                                 margin: .symmetric(horizontal: 3),
@@ -367,7 +381,7 @@ class _HomePageState extends State<HomePage> {
                           controller: disciplinasController,
                           allowImplicitScrolling: true,
                           children: [
-                            GestureDetector(
+                            InkWell(
                               onTap: () {},
                               child: Container(
                                 margin: .symmetric(horizontal: 3),
@@ -406,7 +420,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
 
-                            GestureDetector(
+                            InkWell(
                               onTap: () {},
                               child: Container(
                                 margin: .symmetric(horizontal: 3),
@@ -479,7 +493,7 @@ class _HomePageState extends State<HomePage> {
 
                 Padding(
                   padding: .symmetric(horizontal: 15),
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: () {
                       return expandir();
                     },
@@ -529,7 +543,7 @@ class _HomePageState extends State<HomePage> {
                           padding: .symmetric(horizontal: 8),
                           child: Card(
                             clipBehavior: .antiAlias,
-                            child: GestureDetector(
+                            child: InkWell(
                               child: Image.network(
                                 'https://faculdademalta.edu.br/static/assets/media/img/banner_editais_mobile.jpeg',
                                 fit: BoxFit.cover,
@@ -542,10 +556,8 @@ class _HomePageState extends State<HomePage> {
                           padding: .symmetric(horizontal: 8),
                           child: Card(
                             clipBehavior: .antiAlias,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: .all(.circular(10)),
-                            ),
-                            child: GestureDetector(
+                            
+                            child: InkWell(
                               child: Image.network(
                                 'https://faculdademalta.edu.br/static/assets/media/img/banners/direitomobile.png',
                                 fit: BoxFit.cover,
@@ -558,7 +570,7 @@ class _HomePageState extends State<HomePage> {
                           padding: .symmetric(horizontal: 8),
                           child: Card(
                             clipBehavior: .antiAlias,
-                            child: GestureDetector(
+                            child: InkWell(
                               child: Image.network(
                                 'https://faculdademalta.edu.br/static/assets/media/img/banners/ssocialmobile.png',
                                 fit: BoxFit.cover,
@@ -601,7 +613,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
 
-                        GestureDetector(
+                        InkWell(
                           child: Container(
                             padding: .all(8),
                             decoration: BoxDecoration(

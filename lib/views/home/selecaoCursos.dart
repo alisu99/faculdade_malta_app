@@ -102,7 +102,7 @@ class _SelecaoCursosState extends State<SelecaoCursos> {
                 ),
               ),
             ),
-            GestureDetector(
+            InkWell(
               child: Container(
                 width: 10 * 100,
                 padding: .all(10),

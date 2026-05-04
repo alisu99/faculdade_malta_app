@@ -1,5 +1,6 @@
 import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/perfil/dadosPessoaisPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -75,7 +76,7 @@ class PerfilPage extends StatelessWidget {
                             crossAxisAlignment: .start,
                             children: [
                               Text(
-                                'Alisson G A Santos',
+                                aluno.nome,
                                 style: TextStyle(
                                   color: CustomColor.branco,
                                   fontSize: 14,
@@ -271,7 +272,7 @@ class PerfilPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: CustomColor.ouro,
                   // border: Border.all(color: CustomColor.branco, width: 1),
-                  borderRadius: .all(.circular(10)),
+                  borderRadius: .all(.circular(7)),
                 ),
 
                 child: Row(
@@ -319,13 +320,16 @@ class PerfilPage extends StatelessWidget {
                 padding: .all(20),
                 decoration: BoxDecoration(
                   color: CustomColor.branco50,
-                  borderRadius: .all(.circular(10)),
+                  borderRadius: .all(.circular(7)),
                 ),
 
                 child: Column(
                   spacing: 20,
                   children: [
-                    GestureDetector(
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DadosPessoaisPage(),));
+                      },
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
@@ -343,7 +347,7 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    GestureDetector(
+                    InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
@@ -361,7 +365,7 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    GestureDetector(
+                    InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
@@ -376,7 +380,7 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    GestureDetector(
+                    InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
@@ -391,7 +395,7 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    GestureDetector(
+                    InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
@@ -415,49 +419,68 @@ class PerfilPage extends StatelessWidget {
                     //   },
                     //   child: Text('Alterar nome'),
                     // ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: CustomColor.redMalta,
-                        overlayColor: CustomColor.branco,
-                      ),
-                      onPressed: () => showDialog(
+                    InkWell(
+                      onTap: () => showDialog(
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            
-                            title: Text('Deseja encerrar a sessão?', style: TextStyle(fontSize: 18),),
+                            title: Text(
+                              'Deseja encerrar a sessão?',
+                              style: TextStyle(fontSize: 18),
+                            ),
 
                             actions: [
                               TextButton(
                                 style: TextButton.styleFrom(
-                                  overlayColor: Colors.transparent
+                                  overlayColor: Colors.transparent,
                                 ),
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text('Cancelar', style: TextStyle(color: CustomColor.cinza, fontSize: 18, fontWeight: .bold),),
+                                child: Text(
+                                  'Cancelar',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 18,
+                                    fontWeight: .bold,
+                                  ),
+                                ),
                               ),
 
                               TextButton(
                                 style: TextButton.styleFrom(
-                                  overlayColor: Colors.transparent
+                                  overlayColor: Colors.transparent,
                                 ),
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(context, 'login');
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    'login',
+                                  );
                                 },
-                                child: Text('Sim, quero sair', style: TextStyle(color: CustomColor.cinza, fontSize: 18, fontWeight: .bold),),
+                                child: Text(
+                                  'Sim, quero sair',
+                                  style: TextStyle(
+                                    color: CustomColor.cinza,
+                                    fontSize: 18,
+                                    fontWeight: .bold,
+                                  ),
+                                ),
                               ),
                             ],
                           );
                         },
                       ),
-                      child: Text(
-                        'Sair',
-                        style: TextStyle(
-                          color: CustomColor.branco,
-                          fontSize: 16,
-                          fontWeight: .bold,
-                        ),
+                      child: Row(
+                        crossAxisAlignment: .center,
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
+                          Text('Sair', style: TextStyle(fontSize: 16, color: CustomColor.redMalta)),
+                          Icon(
+                            Icons.keyboard_arrow_right_outlined,
+                            size: 30,
+                            color: CustomColor.redMalta,
+                          ),
+                        ],
                       ),
                     ),
                   ],

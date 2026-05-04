@@ -111,7 +111,7 @@ class FinanceiroPage extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: 6,
                   itemBuilder: (context, index) {
-                    return GestureDetector(
+                    return InkWell(
                       onTap: () {
                         showModalBottomSheet(
                           isScrollControlled: true,

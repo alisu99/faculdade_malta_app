@@ -59,7 +59,7 @@ class PolosPage extends StatelessWidget {
                 itemCount: 6,
 
                 itemBuilder: (context, index) {
-                  return GestureDetector(
+                  return InkWell(
                     onTap: () {},
 
                     child: Container(

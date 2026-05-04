@@ -9,7 +9,7 @@ class Aluno extends ChangeNotifier {
   String nivel;
 
   Aluno({
-    this.nome = 'Alisson',
+    this.nome = 'Alisson Gustavo ALencar Santos',
     this.email = '',
     this.cpf = '',
     this.idade = '',

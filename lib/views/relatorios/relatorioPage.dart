@@ -23,14 +23,14 @@ class RelatorioPage extends StatelessWidget {
             Padding(
               padding: .all(15),
               child: Column(
-                spacing: 10,
+                spacing: 5,
                 children: [
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       padding: .all(15),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10)),
+                        borderRadius: .all(.circular(7)),
                       ),
                       child: Row(
                         mainAxisAlignment: .spaceBetween,
@@ -75,12 +75,12 @@ class RelatorioPage extends StatelessWidget {
                     ),
                   ),
 
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       padding: .all(15),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10)),
+                        borderRadius: .all(.circular(7)),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,12 +127,12 @@ class RelatorioPage extends StatelessWidget {
                     ),
                   ),
 
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       padding: .all(15),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10)),
+                        borderRadius: .all(.circular(7)),
                       ),
                       child: Row(
                         mainAxisAlignment: .spaceBetween,
@@ -177,12 +177,12 @@ class RelatorioPage extends StatelessWidget {
                     ),
                   ),
 
-                  GestureDetector(
+                  InkWell(
                     child: Container(
                       padding: .all(15),
                       decoration: BoxDecoration(
                         color: CustomColor.branco50,
-                        borderRadius: .all(.circular(10)),
+                        borderRadius: .all(.circular(7)),
                       ),
                       child: Row(
                         mainAxisAlignment: .spaceBetween,

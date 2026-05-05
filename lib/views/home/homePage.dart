@@ -120,9 +120,7 @@ class _HomePageState extends State<HomePage> {
                           Expanded(
                             child: Column(
                               crossAxisAlignment: .start,
-                              children: [
-                                SizedBox(height: 30),
-                            
+                              children: [                            
                                 InkWell(
                                   onTap: () {
                                     showModalBottomSheet(
@@ -198,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                margin: .symmetric(horizontal: 3),
+                                // margin: .symmetric(horizontal: 5),
                                 decoration: BoxDecoration(
                                   color: CustomColor.branco,
                                   borderRadius: .circular(7),

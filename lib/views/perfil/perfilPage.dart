@@ -38,17 +38,20 @@ class PerfilPage extends StatelessWidget {
 
               child: Container(
                 decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 1,
-                      color: const Color.fromARGB(68, 0, 0, 0),
-                      spreadRadius: 1,
-                      offset: Offset(0, 4),
-                    ),
-                  ],
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     blurRadius: 1,
+                  //     color: const Color.fromARGB(68, 0, 0, 0),
+                  //     spreadRadius: 1,
+                  //     offset: Offset(0, 4),
+                  //   ),
+                  // ],
                   color: CustomColor.redMalta3,
                   borderRadius: .all(.circular(7)),
-                  border: BoxBorder.all(color: CustomColor.branco50, width: 1),
+                  border: BoxBorder.all(
+                    color: const Color.fromARGB(102, 255, 255, 255),
+                    width: 1,
+                  ),
                 ),
                 padding: .all(15),
                 child: Column(
@@ -56,207 +59,221 @@ class PerfilPage extends StatelessWidget {
                     Row(
                       spacing: 10,
                       children: [
-                        // imagem ou iniciais de perfil
-                        Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            color: CustomColor.branco,
-                            borderRadius: .all(.circular(100)),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
-                              ),
-                            ),
-                          ),
-                        ),
-
                         Expanded(
                           child: Column(
-                            spacing: 5,
                             crossAxisAlignment: .start,
+                            spacing: 10,
                             children: [
-                              Text(
-                                aluno.nome,
-                                style: TextStyle(
-                                  color: CustomColor.branco,
-                                  fontSize: 14,
-                                  fontWeight: .bold,
-                                ),
-                              ),
-
-                              Column(
-                                crossAxisAlignment: .start,
+                              Row(
+                                spacing: 10,
+                                crossAxisAlignment: .center,
                                 children: [
-                                  Text(
-                                    'Curso',
-                                    style: TextStyle(
-                                      color: CustomColor.branco50,
-                                      fontSize: 12,
-                                      fontWeight: .bold,
+                                  // imagem ou iniciais de perfil
+                                  Container(
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      color: CustomColor.branco,
+                                      borderRadius: .all(.circular(100)),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          'https://admin.faculdademalta.edu.br/media/profile_images/71cca382-04c5-43f0-b026-df41a99214a0.jpg',
+                                        ),
+                                      ),
                                     ),
                                   ),
-
-                                  Text(
-                                    'Pedagogia',
-                                    style: TextStyle(
-                                      color: CustomColor.branco,
-                                      fontSize: 14,
-                                      fontWeight: .bold,
-                                    ),
+                                  Column(
+                                    crossAxisAlignment: .start,
+                                    children: [
+                                      Text(
+                                        'Aluno',
+                                        style: TextStyle(
+                                          color: CustomColor.branco50,
+                                          fontSize: 12,
+                                          fontWeight: .bold,
+                                        ),
+                                      ),
+                                      Text(
+                                        aluno.nome,
+                                        style: TextStyle(
+                                          color: CustomColor.branco,
+                                          fontSize: 16,
+                                          fontWeight: .bold,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-
-                              Column(
+                              Row(
                                 crossAxisAlignment: .start,
                                 children: [
-                                  Text(
-                                    'Conclusão',
-                                    style: TextStyle(
-                                      color: CustomColor.branco50,
-                                      fontSize: 12,
-                                      fontWeight: .bold,
+                                  Expanded(
+                                    child: Column(
+                                      spacing: 5,
+                                      crossAxisAlignment: .start,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment: .start,
+                                          children: [
+                                            Text(
+                                              'Curso',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              'Pedagogia',
+                                              style: TextStyle(
+                                                color: CustomColor.branco,
+                                                fontSize: 14,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        Column(
+                                          crossAxisAlignment: .end,
+                                          children: [
+                                            Text(
+                                              'Turno',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              'EAD',
+                                              style: TextStyle(
+                                                color: CustomColor.branco,
+                                                fontSize: 14,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        Column(
+                                          crossAxisAlignment: .start,
+                                          children: [
+                                            Text(
+                                              'Conclusão',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              'DEZ/2030',
+                                              style: TextStyle(
+                                                color: CustomColor.branco,
+                                                fontSize: 14,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                   ),
 
-                                  Text(
-                                    'DEZ/2030',
-                                    style: TextStyle(
-                                      color: CustomColor.branco,
-                                      fontSize: 14,
-                                      fontWeight: .bold,
+                                  Expanded(
+                                    child: Column(
+                                      spacing: 5,
+                                      crossAxisAlignment: .end,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment: .end,
+                                          children: [
+                                            Text(
+                                              'RA',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              'G-000000',
+                                              style: TextStyle(
+                                                color: CustomColor.branco,
+                                                fontSize: 14,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        Column(
+                                          crossAxisAlignment: .end,
+                                          children: [
+                                            Text(
+                                              'Habilitação',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+
+                                            Text(
+                                              'Pedagogia',
+                                              style: TextStyle(
+                                                color: CustomColor.branco,
+                                                fontSize: 14,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        Column(
+                                          crossAxisAlignment: .start,
+                                          children: [
+                                            Text(
+                                              'Nível',
+                                              style: TextStyle(
+                                                color: CustomColor.branco50,
+                                                fontSize: 12,
+                                                fontWeight: .bold,
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: .symmetric(
+                                                horizontal: 10,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: CustomColor.ouro,
+                                                borderRadius: .all(
+                                                  .circular(5),
+                                                ),
+                                              ),
+                                              child: Text(
+                                                'Ouro III',
+                                                style: TextStyle(
+                                                  color: CustomColor.branco,
+                                                  fontSize: 14,
+                                                  fontWeight: .bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ],
                               ),
                             ],
-                          ),
-                        ),
-
-                        Expanded(
-                          child: Column(
-                            spacing: 5,
-                            crossAxisAlignment: .end,
-                            children: [
-                              Column(
-                                crossAxisAlignment: .end,
-                                children: [
-                                  Text(
-                                    'RA',
-                                    style: TextStyle(
-                                      color: CustomColor.branco50,
-                                      fontSize: 12,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-
-                                  Text(
-                                    'G-000000',
-                                    style: TextStyle(
-                                      color: CustomColor.branco,
-                                      fontSize: 14,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Column(
-                                crossAxisAlignment: .end,
-                                children: [
-                                  Text(
-                                    'Habilitação',
-                                    style: TextStyle(
-                                      color: CustomColor.branco50,
-                                      fontSize: 12,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-
-                                  Text(
-                                    'Pedagogia',
-                                    style: TextStyle(
-                                      color: CustomColor.branco,
-                                      fontSize: 14,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              Column(
-                                crossAxisAlignment: .end,
-                                children: [
-                                  Text(
-                                    'Turno',
-                                    style: TextStyle(
-                                      color: CustomColor.branco50,
-                                      fontSize: 12,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-
-                                  Text(
-                                    'EAD',
-                                    style: TextStyle(
-                                      color: CustomColor.branco,
-                                      fontSize: 14,
-                                      fontWeight: .bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    // linha do nível e email
-                    Row(
-                      crossAxisAlignment: .end,
-                      children: [
-                        // coluna do nivel
-                        Column(
-                          crossAxisAlignment: .start,
-                          children: [
-                            Text(
-                              'Nível',
-                              style: TextStyle(
-                                color: CustomColor.branco50,
-                                fontSize: 12,
-                                fontWeight: .bold,
-                              ),
-                            ),
-                            Container(
-                              padding: .symmetric(horizontal: 10),
-                              decoration: BoxDecoration(
-                                color: CustomColor.ouro,
-                                borderRadius: .all(.circular(5)),
-                              ),
-                              child: Text(
-                                'Ouro III',
-                                style: TextStyle(
-                                  color: CustomColor.branco,
-                                  fontSize: 14,
-                                  fontWeight: .bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        // email
-                        Expanded(
-                          child: Text(
-                            aluno.email,
-                            textAlign: .end,
-                            style: TextStyle(
-                              color: CustomColor.branco,
-                              fontSize: 14,
-                              fontWeight: .bold,
-                            ),
                           ),
                         ),
                       ],
@@ -378,7 +395,6 @@ class PerfilPage extends StatelessWidget {
                     //     ],
                     //   ),
                     // ),
-
                     InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
@@ -422,7 +438,6 @@ class PerfilPage extends StatelessWidget {
                     //     ],
                     //   ),
                     // ),
-
                     InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
@@ -445,15 +460,6 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    // testando o provider
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     return aluno.alterarNome(
-                    //       aluno.nome == 'Alisson' ? 'Gustavo' : 'Alisson',
-                    //     );
-                    //   },
-                    //   child: Text('Alterar nome'),
-                    // ),
                     InkWell(
                       onTap: () => showDialog(
                         context: context,
@@ -487,7 +493,12 @@ class PerfilPage extends StatelessWidget {
                                   overlayColor: Colors.transparent,
                                 ),
                                 onPressed: () {
-                                  Navigator.pushNamedAndRemoveUntil(context, 'login', (route) => EditableText.debugDeterministicCursor,);
+                                  Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    'login',
+                                    (route) =>
+                                        EditableText.debugDeterministicCursor,
+                                  );
                                 },
                                 child: Text(
                                   'Sim, quero sair',

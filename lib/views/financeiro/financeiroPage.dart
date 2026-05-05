@@ -10,12 +10,6 @@ class FinanceiroPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Informações financeiras'),
-        shape: RoundedRectangleBorder(
-          borderRadius: .only(
-            bottomLeft: .circular(10),
-            bottomRight: .circular(10),
-          ),
-        ),
       ),
       body: SafeArea(
         child: Padding(

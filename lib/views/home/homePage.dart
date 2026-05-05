@@ -110,10 +110,6 @@ class _HomePageState extends State<HomePage> {
                       begin: AlignmentGeometry.topStart,
                       end: AlignmentGeometry.bottomStart,
                     ),
-                    borderRadius: .only(
-                      bottomLeft: .circular(10),
-                      bottomRight: .circular(10),
-                    ),
                   ),
                   child: Column(
                     spacing: 25,
@@ -541,12 +537,14 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: Card(
-                            clipBehavior: .antiAlias,
-                            child: InkWell(
-                              child: Image.network(
-                                'https://faculdademalta.edu.br/static/assets/media/img/banner_editais_mobile.jpeg',
-                                fit: BoxFit.cover,
+                          child: InkWell(
+                            child: Card(
+                              clipBehavior: .antiAlias,
+                              child: InkWell(
+                                child: Image.network(
+                                  'https://faculdademalta.edu.br/static/assets/media/img/banner_editais_mobile.jpeg',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -554,13 +552,15 @@ class _HomePageState extends State<HomePage> {
 
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: Card(
-                            clipBehavior: .antiAlias,
-                            
-                            child: InkWell(
-                              child: Image.network(
-                                'https://faculdademalta.edu.br/static/assets/media/img/banners/direitomobile.png',
-                                fit: BoxFit.cover,
+                          child: InkWell(
+                            child: Card(
+                              clipBehavior: .antiAlias,
+                              
+                              child: InkWell(
+                                child: Image.network(
+                                  'https://faculdademalta.edu.br/static/assets/media/img/banners/direitomobile.png',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -568,12 +568,14 @@ class _HomePageState extends State<HomePage> {
 
                         Padding(
                           padding: .symmetric(horizontal: 8),
-                          child: Card(
-                            clipBehavior: .antiAlias,
-                            child: InkWell(
-                              child: Image.network(
-                                'https://faculdademalta.edu.br/static/assets/media/img/banners/ssocialmobile.png',
-                                fit: BoxFit.cover,
+                          child: InkWell(
+                            child: Card(
+                              clipBehavior: .antiAlias,
+                              child: InkWell(
+                                child: Image.network(
+                                  'https://faculdademalta.edu.br/static/assets/media/img/banners/ssocialmobile.png',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),

@@ -8,12 +8,12 @@ class PolosPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Polos'),
-        shape: RoundedRectangleBorder(
-          borderRadius: .only(
-            bottomLeft: .circular(10),
-            bottomRight: .circular(10),
-          ),
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: .only(
+        //     bottomLeft: .circular(10),
+        //     bottomRight: .circular(10),
+        //   ),
+        // ),
       ),
 
       body: Padding(

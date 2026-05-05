@@ -9,12 +9,12 @@ class RelatorioPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Relatórios'),
-        shape: RoundedRectangleBorder(
-          borderRadius: .only(
-            bottomLeft: .circular(10),
-            bottomRight: .circular(10),
-          ),
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: .only(
+        //     bottomLeft: .circular(10),
+        //     bottomRight: .circular(10),
+        //   ),
+        // ),
       ),
 
       body: SafeArea(

@@ -1,5 +1,6 @@
 import 'package:faculdade_malta_app/models/aluno.dart';
 import 'package:faculdade_malta_app/styles/colors.dart';
+import 'package:faculdade_malta_app/views/auth/loginScreen.dart';
 import 'package:faculdade_malta_app/views/perfil/dadosPessoaisPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -29,10 +30,10 @@ class PerfilPage extends StatelessWidget {
                   begin: AlignmentGeometry.topStart,
                   end: AlignmentGeometry.bottomStart,
                 ),
-                borderRadius: .only(
-                  bottomLeft: .circular(10),
-                  bottomRight: .circular(10),
-                ),
+                // borderRadius: .only(
+                //   bottomLeft: .circular(10),
+                //   bottomRight: .circular(10),
+                // ),
               ),
 
               child: Container(
@@ -249,7 +250,7 @@ class PerfilPage extends StatelessWidget {
                         // email
                         Expanded(
                           child: Text(
-                            'alissonsts910@gmail.com',
+                            aluno.email,
                             textAlign: .end,
                             style: TextStyle(
                               color: CustomColor.branco,
@@ -328,7 +329,12 @@ class PerfilPage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DadosPessoaisPage(),));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DadosPessoaisPage(),
+                          ),
+                        );
                       },
                       child: Row(
                         crossAxisAlignment: .center,
@@ -336,7 +342,11 @@ class PerfilPage extends StatelessWidget {
                         children: [
                           Text(
                             'Dados pessoais',
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: CustomColor.cinza,
+                            ),
                           ),
                           Icon(
                             Icons.keyboard_arrow_right_outlined,
@@ -346,6 +356,28 @@ class PerfilPage extends StatelessWidget {
                         ],
                       ),
                     ),
+
+                    // InkWell(
+                    //   child: Row(
+                    //     crossAxisAlignment: .center,
+                    //     mainAxisAlignment: .spaceBetween,
+                    //     children: [
+                    //       Text(
+                    //         'Dados profissionais',
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 16,
+                    //           color: CustomColor.cinza,
+                    //         ),
+                    //       ),
+                    //       Icon(
+                    //         Icons.keyboard_arrow_right_outlined,
+                    //         size: 30,
+                    //         color: const Color.fromARGB(255, 117, 117, 117),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
 
                     InkWell(
                       child: Row(
@@ -353,8 +385,12 @@ class PerfilPage extends StatelessWidget {
                         mainAxisAlignment: .spaceBetween,
                         children: [
                           Text(
-                            'Dados profissionais',
-                            style: TextStyle(fontSize: 16),
+                            'Responsáveis',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: CustomColor.cinza,
+                            ),
                           ),
                           Icon(
                             Icons.keyboard_arrow_right_outlined,
@@ -365,42 +401,41 @@ class PerfilPage extends StatelessWidget {
                       ),
                     ),
 
-                    InkWell(
-                      child: Row(
-                        crossAxisAlignment: .center,
-                        mainAxisAlignment: .spaceBetween,
-                        children: [
-                          Text('Responsáveis', style: TextStyle(fontSize: 16)),
-                          Icon(
-                            Icons.keyboard_arrow_right_outlined,
-                            size: 30,
-                            color: const Color.fromARGB(255, 117, 117, 117),
-                          ),
-                        ],
-                      ),
-                    ),
+                    // InkWell(
+                    //   child: Row(
+                    //     crossAxisAlignment: .center,
+                    //     mainAxisAlignment: .spaceBetween,
+                    //     children: [
+                    //       Text(
+                    //         'Ficha médica',
+                    //         style: TextStyle(
+                    //           fontWeight: FontWeight.bold,
+                    //           fontSize: 16,
+                    //           color: CustomColor.cinza,
+                    //         ),
+                    //       ),
+                    //       Icon(
+                    //         Icons.keyboard_arrow_right_outlined,
+                    //         size: 30,
+                    //         color: const Color.fromARGB(255, 117, 117, 117),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
 
                     InkWell(
                       child: Row(
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Ficha médica', style: TextStyle(fontSize: 16)),
-                          Icon(
-                            Icons.keyboard_arrow_right_outlined,
-                            size: 30,
-                            color: const Color.fromARGB(255, 117, 117, 117),
+                          Text(
+                            'Documentos',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: CustomColor.cinza,
+                            ),
                           ),
-                        ],
-                      ),
-                    ),
-
-                    InkWell(
-                      child: Row(
-                        crossAxisAlignment: .center,
-                        mainAxisAlignment: .spaceBetween,
-                        children: [
-                          Text('Documentos', style: TextStyle(fontSize: 16)),
                           Icon(
                             Icons.keyboard_arrow_right_outlined,
                             size: 30,
@@ -452,10 +487,7 @@ class PerfilPage extends StatelessWidget {
                                   overlayColor: Colors.transparent,
                                 ),
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(
-                                    context,
-                                    'login',
-                                  );
+                                  Navigator.pushNamedAndRemoveUntil(context, 'login', (route) => EditableText.debugDeterministicCursor,);
                                 },
                                 child: Text(
                                   'Sim, quero sair',
@@ -474,7 +506,14 @@ class PerfilPage extends StatelessWidget {
                         crossAxisAlignment: .center,
                         mainAxisAlignment: .spaceBetween,
                         children: [
-                          Text('Sair', style: TextStyle(fontSize: 16, color: CustomColor.redMalta)),
+                          Text(
+                            'Sair',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: CustomColor.redMalta,
+                            ),
+                          ),
                           Icon(
                             Icons.keyboard_arrow_right_outlined,
                             size: 30,

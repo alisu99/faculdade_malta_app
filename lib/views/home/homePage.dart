@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
           color: CustomColor.redMalta,
           child: SingleChildScrollView(
             child: Column(
-              spacing: 20,
+              spacing: 10,
               children: [
                 // container que botei pra simular uma appbar
                 Container(
@@ -465,14 +465,14 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: .start,
                     spacing: 5,
                     children: [
-                      Text(
-                        'Atalhos',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: CustomColor.cinza,
-                          fontWeight: .w600,
-                        ),
-                      ),
+                      // Text(
+                      //   'Atalhos',
+                      //   style: TextStyle(
+                      //     fontSize: 14,
+                      //     color: CustomColor.cinza,
+                      //     fontWeight: .w600,
+                      //   ),
+                      // ),
                       GridView.count(
                         shrinkWrap: true,
                         physics: NeverScrollableScrollPhysics(),
@@ -492,13 +492,13 @@ class _HomePageState extends State<HomePage> {
                       return expandir();
                     },
                     child: Container(
-                      padding: .all(5),
+                      padding: .all(2),
                       decoration: BoxDecoration(
                         color: CustomColor.branco,
                         borderRadius: .all(.circular(7)),
                         border: Border.all(
                           color: CustomColor.redMalta,
-                          width: 1.5,
+                          width: 2,
                         ),
                       ),
                       child: Row(
@@ -516,7 +516,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                               color: CustomColor.redMalta,
                               fontWeight: .bold,
-                              fontSize: 14,
+                              fontSize: 15,
                             ),
                           ),
                         ],
